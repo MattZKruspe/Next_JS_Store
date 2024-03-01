@@ -1,16 +1,16 @@
 interface CategoryProps{
 
     params:{
-        category: String
+        categories: String
     }
 
 }
 
 export default function Category(props:CategoryProps){
 
-    const { category } = props.params
+    const { categories } = props.params
 
     return(
-        <h1>Categoria Dinámica {category}</h1>
+        <h1>Categoria Dinámica {categories}</h1>
     )
 }
