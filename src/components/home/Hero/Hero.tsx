@@ -1,11 +1,11 @@
 
-import styles from './Hero.module.css'
+import styles from './Hero.module.sass'
+
+ 
 
 export const Hero = () => {
     
-    return (
-
-     
+    return (   
 
         <section className= {styles.Hero}> 
             <h1> FUTURE WORD</h1>
