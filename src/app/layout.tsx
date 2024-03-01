@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google";
 import { Header } from "app/components/Shared/Header";
 import { Footer } from "app/components/Shared/Footer";
+import "app/sass/globals.sass";
 
 const inter = Inter({ subsets: ["latin"] });
  
