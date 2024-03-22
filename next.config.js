@@ -1,14 +1,40 @@
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
 
+// const path = require('path')
+
+// const nextConfig = {
+
+//     sassOptions: {
+//         includePaths: [path.join(__dirname, 'src/sass')],
+//         prepenData: `@import "main.sass"`
+//       },
+
+// };
+
+// module.exports =  nextConfig;
+
+// ------------ PRUEBA --------------
+
+/** @type {import('next').NextConfig} */
 const path = require('path')
 
 const nextConfig = {
 
     sassOptions: {
-        includePaths: [path.join(__dirname, 'src/sass')],
-        prepenData: `@import "main.sass"`
-      },
+
+        includePaths: [path.join(__dirname,'src/sass')],
+        prependData: `@import 'main.sass'`,
+    },
+
+    // images: {
+
+    //     remotePatterns: [{
+    //         hostname:'cdn.shopify.com',
+    //         protocol:'https'
+    //     }]
+    // }
 
 };
 
-module.export =  nextConfig;
+  
+module.exports = nextConfig;
