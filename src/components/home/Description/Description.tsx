@@ -1,25 +1,42 @@
+"use client"
+import { useState } from 'react';
 
+// import { use, useState } from 'react';
 import styles  from './Description.module.sass';
 import Image from 'next/image';
+import classNames from 'classnames/bind';
 
 const PLACEHOLDER_IMAGE = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAmACYDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAAUDBAYBAv/EACAQAAIDAAICAwEAAAAAAAAAAAABAgMEESEFEhMiI0H/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQBAP/EAB0RAAICAgMBAAAAAAAAAAAAAAABAhEDMQQSISL/2gAMAwEAAhEDEQA/AMI4M901vktTrRJmq5kinHK0dkiS0UtoNFLUWOMmdOK6Obc6UH0LkvoFS8oyGiLUwLG2PFjApjPwU4luySJckl7oUy08/wBJsuj7LsmgupU32NnikvVHnyDXxsWZNfEV2G3XzB9mN2xMlQi8hL9egK2y32sAYkwOwpVsmWc9j5QAbk0FxnY3z3S4R2+2TiAE0djsuhTfJuQABatED2f/2Q=='
 
 export const Description = () => {
+    const [hasBorder, setBoerder] = useState(false);
+
+    const handleClick = () => setBoerder(!hasBorder);
+
+    const cx = classNames.bind(styles);
+        
+    const buttonStyles = cx('Description__button', {
+        'Description__button--border': hasBorder
+    });
+        console.log(buttonStyles)
 
     return (
-        <section className={styles.Description}>
+        <section className={styles.Description} >
+           
+            <button onClick={handleClick} className={buttonStyles}>
 
-            <div className={styles.Description__imageContainer}> 
-                <Image
-                    src="/images/description.jpeg" 
-                    alt="product markerplace" 
-                    fill
-                    placeholder='blur'
-                    blurDataURL={PLACEHOLDER_IMAGE}
-                    />
+                <div className={styles.Description__imageContainer}> 
+                    <Image
+                        src="/images/description.jpeg" 
+                        alt="product markerplace" 
+                        fill
+                        placeholder='blur'
+                        blurDataURL={PLACEHOLDER_IMAGE}
+                        />
 
-            </div>
-          
+                </div>
+
+            </button>
 
             <div className={styles.Description__text}>
                 <h2>Bring the future today</h2>
