@@ -26,13 +26,13 @@ const nextConfig = {
         prependData: `@import 'main.sass'`,
     },
 
-    // images: {
+    images: {
 
-    //     remotePatterns: [{
-    //         hostname:'cdn.shopify.com',
-    //         protocol:'https'
-    //     }]
-    // }
+        remotePatterns: [{
+            hostname:'cdn.shopify.com',
+            protocol:'https'
+        }]
+    }
 
 };
 
