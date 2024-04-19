@@ -1,26 +1,22 @@
-import Link from "next/link";
+import Link from 'next/link'
+import styles from './Header.module.css'
 
 export const Header = () => {
-
-  return(
-
-      <header>
-        <nav>
-          <ul>
-
+  return (
+    <header>
+      <nav>
+        <ul className={styles.Header__list}>
+          <li>
             <Link href="/">
-                <li>home</li>
+              Home
             </Link>
-
+          </li>
+          <li>
             <Link href="/store">
-                <li>Store</li>
+              Store
             </Link>
-              
-          </ul>
-        
-        </nav>
-    </header>
-  )
-
-  
+          </li>
+        </ul>
+      </nav>
+    </header>)
 }
