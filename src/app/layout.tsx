@@ -8,7 +8,7 @@ const roboto = Roboto({
   subsets: ["latin"]
 
 })
- 
+
 
 export default function RootLayout({
   children,
@@ -17,9 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-          
+      {/* <body className={roboto.className}> */}
+
+          {/* ------- */}
           <Header />
+              <body className={roboto.className}>
+
             {children}</body>
           <Footer />
     </html>

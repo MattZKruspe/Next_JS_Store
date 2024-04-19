@@ -2,13 +2,13 @@ import { Description } from "app/components/home/Description";
 import { Hero } from "app/components/home/Hero";
 import { MainProducts } from "app/components/home/MainProducts";
 
-export default function Home() {
+export default function Home({children}:{children: React.ReactNode}) {
    
   return (
     <main >
-
-      <Hero />
-      <Description />
+      <header />
+      {/* <Hero />
+      <Description /> */}
       <MainProducts />
       
     </main>
