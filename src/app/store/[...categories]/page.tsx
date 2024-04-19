@@ -1,16 +1,17 @@
-interface CategoryProps{
-
-    params:{
-        categories: String
+interface CategoryProps {
+    params: {
+      categories: string[],
     }
-
-}
-
-export default function Category(props:CategoryProps){
-
+    searchParams?: string
+  }
+  
+  export default function Category(props: CategoryProps){
+    // console.log(props)
+  
     const { categories } = props.params
-
+    // console.log(categories)
+    throw new Error('Error: boom')
     return(
-        <h1>Categoria Dinámica {categories}</h1>
+      <h1>Categoria dinámica: {categories}</h1>
     )
-}
+  }
